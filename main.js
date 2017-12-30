@@ -15,7 +15,7 @@ function createWindow () {
   win.on('closed', function () {
     win = null
   })
-  win.setFullScreen(true);
+  //win.setFullScreen(true);
 }
 // Create window on electron intialization
 app.on('ready', createWindow)
