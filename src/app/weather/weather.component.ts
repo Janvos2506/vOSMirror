@@ -26,6 +26,12 @@ export class WeatherComponent implements OnInit {
       switch (this.forecast.weather[0].description) {
         case ('light rain'):
           this.icon = 'wi-showers';
+          break;
+
+        case ('moderate rain'):
+          this.icon = 'wi-rain';
+          break;
+
       }
     });
   }
