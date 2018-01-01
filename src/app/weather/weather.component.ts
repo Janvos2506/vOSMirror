@@ -20,9 +20,16 @@ export class WeatherComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getWeather();
+    setInterval(() => {
+      this.getWeather();
+    }, 30000);
+  }
+
+  getWeather() {
     this.http.get<Weather>(this.apiURL).subscribe(data => {
       this.forecast = <Weather>data;
-
+      this.forecast.main.temp = Math.round( (this.forecast.main.temp - 274.15) * 10 ) / 10;
       switch (this.forecast.weather[0].description) {
         case ('light rain'):
           this.icon = 'wi-showers';
@@ -30,6 +37,14 @@ export class WeatherComponent implements OnInit {
 
         case ('moderate rain'):
           this.icon = 'wi-rain';
+          break;
+
+        case ('overcast clouds'):
+          this.icon = 'wi-cloudy';
+          break;
+
+        case ('broken clouds'):
+          this.icon = 'wi-cloud';
           break;
 
       }

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ClockComponent } from './clock/clock.component';
 import { WeatherComponent } from './weather/weather.component';
+import { DockComponent } from './dock/dock.component';
 
 
 
@@ -14,6 +15,7 @@ import { WeatherComponent } from './weather/weather.component';
     AppComponent,
     ClockComponent,
     WeatherComponent,
+    DockComponent,
   ],
   imports: [
     BrowserModule,
